@@ -1,5 +1,4 @@
 import json
-from tkinter import N
 
 # import requests
 # 最初に2以上の整数値を入力し、次の規則で計算し、計算回数と計算結果を表示し、計算結果が1になるまで繰り返すプログラムを作成せよ。
@@ -83,11 +82,12 @@ def lambda_handler(event, context):
     #     print(e)
 
     #     raise e
-
+    results = is_repetition_numbers(n)
     return {
         "statusCode": 200,
         "body": json.dumps({
-            "message": n,
+            "count": len(results),
+            "result":results,
             # "location": ip.text.replace("\n", "")
         }),
     }
