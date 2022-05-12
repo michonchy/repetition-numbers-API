@@ -23,7 +23,7 @@ Resources:
         RepetitionNumbers:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /hello
+            Path: /repetition-numbers
             Method: get
             RequestParameters:
               - method.request.querystring.numbers:
@@ -36,7 +36,7 @@ Outputs:
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   RepetitionNumbersApi:
     Description: "API Gateway endpoint URL for Prod stage for repetition numbers function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/repetition-numbers/"
   RepetitionNumbersFunction:
     Description: "repetition numbers Lambda Function ARN"
     Value: !GetAtt RepetitionNumbersFunction.Arn
